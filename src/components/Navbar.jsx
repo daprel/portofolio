@@ -37,13 +37,15 @@ export default function Navbar() {
   const handleClick = (e, id) => {
     e.preventDefault();
     setIsOpen(false);
-    const element = document.getElementById(id);
-    if (element) {
-      window.scrollTo({
-        top: element.offsetTop - 80,
-        behavior: 'smooth'
-      });
-    }
+    setTimeout(() => {
+      const element = document.getElementById(id);
+      if (element) {
+        window.scrollTo({
+          top: element.offsetTop - 80,
+          behavior: 'smooth'
+        });
+      }
+    }, 50);
   };
 
   return (
@@ -95,7 +97,7 @@ export default function Navbar() {
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            className="md:hidden bg-primary border-t border-white/10 overflow-hidden"
+            className="md:hidden absolute top-full left-0 w-full bg-primary border-t border-white/10 overflow-hidden"
           >
             <div className="flex flex-col px-4 py-2 gap-2 text-white font-bold">
               {links.map((item) => (

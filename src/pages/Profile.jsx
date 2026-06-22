@@ -211,6 +211,14 @@ export default function Profile() {
             <h3 className="text-2xl font-bold mb-6 text-accent bg-white inline-block px-4 py-2 rounded-lg shadow-md">Certifications</h3>
             <ul className="space-y-4">
               <motion.li variants={item} className="bg-white/10 p-4 rounded-xl border border-white/20">
+                <span className="font-bold">SAP01 (SAP Fundamental)</span><br />
+                <span className="text-sm text-white/80">Edugate Indonesia</span>
+              </motion.li>
+              <motion.li variants={item} className="bg-white/10 p-4 rounded-xl border border-white/20">
+                <span className="font-bold">SAP SCM500 (Business Processes in Procurement)</span><br />
+                <span className="text-sm text-white/80">Edugate Indonesia</span>
+              </motion.li>
+              <motion.li variants={item} className="bg-white/10 p-4 rounded-xl border border-white/20">
                 <span className="font-bold">ECCT® (English Communicative Competence Test)</span><br />
                 <span className="text-sm text-white/80">Score 4/4 (Feb 2025)</span>
               </motion.li>
