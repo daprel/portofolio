@@ -1,5 +1,7 @@
-import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { useNavigate } from "react-router-dom";
+import { ExternalLink, LayoutTemplate, Sparkles } from "lucide-react";
 
 const basePath = import.meta.env.BASE_URL;
 
@@ -11,9 +13,9 @@ const projects = [
     images: [
       `${basePath}img/ptpn_intern/ptpn_intern (1).jpg`,
       `${basePath}img/ptpn_intern/ptpn_intern (2).jpg`,
-      `${basePath}img/ptpn_intern/ptpn_intern (3).jpg`
+      `${basePath}img/ptpn_intern/ptpn_intern (3).jpg`,
     ],
-    className: "md:col-span-2 md:row-span-2 h-[300px] md:h-auto"
+    className: "md:col-span-2 md:row-span-2 h-[300px] md:h-auto",
   },
   {
     id: "capstone",
@@ -22,51 +24,47 @@ const projects = [
     images: [
       `${basePath}img/capstone_design_epr/capstone_design_epr (1).jpg`,
       `${basePath}img/capstone_design_epr/capstone_design_epr (2).jpg`,
-      `${basePath}img/capstone_design_epr/capstone_design_epr (3).jpg`
+      `${basePath}img/capstone_design_epr/capstone_design_epr (3).jpg`,
     ],
-    className: "md:col-span-1 md:row-span-1 h-[300px]"
+    className: "md:col-span-1 md:row-span-1 h-[300px]",
   },
   {
     id: "isilogic",
     title: "Karsa Cipta & Riset Sosial",
     category: "ISILOGIC 2026",
-    images: [
-      `${basePath}img/isilogic_2026/isilogic_2026.jpg`
-    ],
-    className: "md:col-span-1 md:row-span-1 h-[300px]"
+    images: [`${basePath}img/isilogic_2026/isilogic_2026.jpg`],
+    className: "md:col-span-1 md:row-span-1 h-[300px]",
   },
   {
     id: "gtx",
     title: "GTX GMF Viscom",
-    category: "Project Competition",
+    category: "Company Visit",
     images: [
       `${basePath}img/gtx/gtx_gmf_viscom(1).jpg`,
-      `${basePath}img/gtx/gtx_gmf_viscom(2).jpg`
+      `${basePath}img/gtx/gtx_gmf_viscom(2).jpg`,
     ],
-    className: "md:col-span-2 md:row-span-1 h-[300px]"
+    className: "md:col-span-2 md:row-span-1 h-[300px]",
   },
   {
     id: "icoeins",
     title: "Presenter",
     category: "ICOEINS 2026",
-    images: [
-      `${basePath}img/icoeins_2026/icoeins_2026_presenter.jpg`
-    ],
-    className: "md:col-span-1 md:row-span-1 h-[300px]"
-  }
+    images: [`${basePath}img/icoeins_2026/icoeins_2026_presenter.jpg`],
+    className: "md:col-span-1 md:row-span-1 h-[300px]",
+  },
 ];
 
 const container = {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
-    transition: { staggerChildren: 0.15 }
-  }
+    transition: { staggerChildren: 0.15 },
+  },
 };
 
 const itemVariants = {
   hidden: { opacity: 0, y: 30 },
-  show: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 80 } }
+  show: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 80 } },
 };
 
 const ProjectCard = ({ project }) => {
@@ -75,7 +73,7 @@ const ProjectCard = ({ project }) => {
   useEffect(() => {
     if (project.images.length <= 1) return;
     const interval = setInterval(() => {
-      setImgIndex(prev => (prev + 1) % project.images.length);
+      setImgIndex((prev) => (prev + 1) % project.images.length);
     }, 3500);
     return () => clearInterval(interval);
   }, [project.images.length]);
@@ -115,14 +113,16 @@ const ProjectCard = ({ project }) => {
           <div className="inline-block bg-white/95 backdrop-blur-md text-primary font-bold px-3 py-1.5 rounded-lg text-[10px] md:text-xs mb-3 tracking-widest uppercase shadow-lg border border-white/20">
             {project.category}
           </div>
-          <h3 className="text-white text-2xl md:text-3xl font-extrabold leading-tight drop-shadow-lg">{project.title}</h3>
+          <h3 className="text-white text-2xl md:text-3xl font-extrabold leading-tight drop-shadow-lg">
+            {project.title}
+          </h3>
 
           {project.images.length > 1 && (
             <div className="flex gap-1.5 mt-4">
               {project.images.map((_, i) => (
                 <div
                   key={i}
-                  className={`h-1.5 rounded-full transition-all duration-500 ${i === imgIndex ? 'w-6 bg-accent' : 'w-2 bg-white/40'}`}
+                  className={`h-1.5 rounded-full transition-all duration-500 ${i === imgIndex ? "w-6 bg-accent" : "w-2 bg-white/40"}`}
                 ></div>
               ))}
             </div>
@@ -134,6 +134,8 @@ const ProjectCard = ({ project }) => {
 };
 
 export default function Portfolio() {
+  const navigate = useNavigate();
+
   return (
     <section id="portfolio" className="py-24 px-5 bg-[#f8f9fa]">
       <div className="container mx-auto max-w-6xl">
@@ -148,7 +150,8 @@ export default function Portfolio() {
           </motion.h2>
           <div className="w-24 h-1.5 bg-accent mx-auto mt-6 rounded-full"></div>
           <p className="mt-6 text-gray-500 max-w-2xl mx-auto text-lg">
-            A curated collection of my professional internships, academic projects, and competition achievements.
+            A curated collection of my professional internships, academic
+            projects, and competition achievements.
           </p>
         </header>
 
@@ -159,13 +162,15 @@ export default function Portfolio() {
           viewport={{ once: true, margin: "-100px" }}
           className="grid grid-cols-1 md:grid-cols-3 md:auto-rows-[300px] gap-6"
         >
-          {projects.map(project => (
+          {projects.map((project) => (
             <ProjectCard key={project.id} project={project} />
           ))}
         </motion.div>
 
         <div className="mt-20 text-center">
-          <h3 className="text-2xl font-bold mb-8 text-primary">Discover More of My Work</h3>
+          <h3 className="text-2xl font-bold mb-8 text-primary">
+            Discover More of My Work
+          </h3>
           <div className="flex flex-wrap justify-center gap-4">
             <motion.a
               whileHover={{ scale: 1.05 }}
@@ -173,20 +178,23 @@ export default function Portfolio() {
               href="https://www.linkedin.com/in/daffarial/"
               target="_blank"
               rel="noreferrer"
-              className="px-8 py-3.5 bg-[#0a66c2] text-white font-bold rounded-xl shadow-lg hover:shadow-xl hover:bg-[#084e96] transition-all"
+              className="btn btn-glass-primary"
             >
+              <ExternalLink size={20} />
               Connect on LinkedIn
             </motion.a>
-            <motion.a
+            <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              href="https://www.canva.com/design/DAGl3xuNePo/7iO0Ru9roDNSci_KKuZccQ/edit"
-              target="_blank"
-              rel="noreferrer"
-              className="px-8 py-3.5 bg-primary text-white font-bold rounded-xl shadow-lg hover:shadow-xl hover:bg-accent transition-all"
+              onClick={() => {
+                navigate("/highlights");
+                window.scrollTo(0, 0);
+              }}
+              className="btn btn-glass-primary"
             >
+              <LayoutTemplate size={20} />
               View Full Portfolio
-            </motion.a>
+            </motion.button>
           </div>
         </div>
       </div>
