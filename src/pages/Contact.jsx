@@ -27,7 +27,7 @@ export default function Contact() {
   ];
 
   return (
-    <section id="contact" className="py-20 px-5 bg-secondary text-white">
+    <section id="contact" className="py-20 px-5 bg-primary text-white">
       <div className="container mx-auto max-w-6xl">
         <header className="mb-16 text-center">
           <motion.h2 
@@ -52,7 +52,7 @@ export default function Contact() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="bg-white/10 p-8 rounded-3xl border border-white/20 text-center flex flex-col items-center hover:bg-white/15 transition-colors group"
+              className="card-glass p-8 rounded-3xl text-center flex flex-col items-center group"
             >
               <div className="p-4 bg-accent rounded-full mb-6 group-hover:scale-110 transition-transform shadow-lg">
                 {contact.icon}
@@ -64,7 +64,7 @@ export default function Contact() {
                 href={contact.action}
                 target="_blank"
                 rel="noreferrer"
-                className="mt-auto px-6 py-3 w-full bg-primary hover:bg-accent text-white font-bold rounded-xl shadow-lg transition-colors"
+                className="mt-auto w-full btn btn-glass-white"
               >
                 {contact.buttonText}
               </a>
