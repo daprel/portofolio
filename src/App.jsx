@@ -1,27 +1,17 @@
-import { Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
-import Home from './pages/Home';
-import Profile from './pages/Profile';
-import Portfolio from './pages/Portfolio';
-import Contact from './pages/Contact';
-import ProjectHighlights from './pages/ProjectHighlights';
+import { Routes, Route, Navigate } from 'react-router-dom';
+import Navbar from './components/layout/Navbar';
+import Footer from './components/layout/Footer';
+import HomePage from './pages/HomePage';
 
 function App() {
   return (
-    <div className="flex flex-col min-h-screen bg-slate-50 font-sans">
+    <div className="flex flex-col min-h-screen bg-white font-sans text-slate-900">
       <Navbar />
       <main className="flex-grow">
         <Routes>
-          <Route path="/" element={
-            <>
-              <Home />
-              <Profile />
-              <Portfolio />
-              <Contact />
-            </>
-          } />
-          <Route path="/highlights" element={<ProjectHighlights />} />
+          <Route path="/" element={<HomePage />} />
+          {/* The old /highlights page now lives on the home page */}
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </main>
       <Footer />

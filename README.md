@@ -1,16 +1,40 @@
-# React + Vite
+# Daprel Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Website portofolio pribadi Muhamad Daffa Rial, dibangun dengan React + Vite + Tailwind CSS dan di-deploy ke GitHub Pages (`/portofolio/`).
 
-Currently, two official plugins are available:
+## Menjalankan
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+```bash
+npm install
+npm run dev      # server pengembangan
+npm run build    # build produksi ke dist/
+npm run lint
+```
 
-## React Compiler
+## Struktur
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```
+src/
+  pages/        HomePage (/) — satu halaman berisi semua section
+  sections/     bagian-bagian halaman, satu folder per section
+                (hero, projects, internships, research, tools, profile, contact)
+  components/
+    layout/     Navbar, Footer
+    showcase/   pola "showcase + kartu": FeaturedShowcase, CaseStudySection,
+                ProjectCard, ProjectDetailModal, ExpandableGrid, badge-badge
+    ui/         komponen dasar: SectionHeader, ImageLightbox, BrandLogo, Tag, ...
+  data/         konten portofolio, dipisah per topik (profile, projects,
+                internships, experience, credentials, skills, tools, navigation)
+  hooks/        useSectionNavigation (navigasi navbar & footer)
+  utils/        asset() untuk path public/, scrollToSection()
+public/
+  img/          foto & logo (penamaan snake_case, tanpa spasi)
+  projects/     berkas dokumentasi per proyek (publik)
+private/        dokumen pribadi — diabaikan Git, jangan dipindah ke public/
+```
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Mengubah konten** (pengalaman, proyek, publikasi, sertifikasi, tools): cukup edit file di `src/data/`, tanpa menyentuh komponen.
+- **Showcase vs kartu**: item dengan `featured: true` (di projects, internships, publications, intellectualProperty) tampil besar di atas section; sisanya jadi kartu.
+- **Gambar dari `public/`**: panggil lewat `asset('img/...')` dari `src/utils/asset.js` agar base path `/portofolio/` otomatis ditambahkan.
+- **Warna brand**: gunakan token tema (`primary`, `primary-light`, `primary-dark`, `sand`) yang didefinisikan di `src/index.css`, bukan kode hex.
+- **Menambah section di beranda**: buat folder di `src/sections/`, pasang di `HomePage.jsx`, lalu tambahkan id-nya ke `src/data/navigation.js`.

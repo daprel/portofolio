@@ -22,3 +22,11 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Private & Personal files (CV, data pribadi, dokumen sensitif)
+private/*
+!private/.gitkeep
+!private/README.md
+
+# Vite cache
+.vite
