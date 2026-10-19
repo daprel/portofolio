@@ -27,8 +27,8 @@ export default function ProfileSection() {
       <div className="container mx-auto max-w-6xl">
         <SectionHeader
           icon={Award}
-          eyebrow="Professional Track Record & Credentials"
-          title="Executive Background & Credentials"
+          eyebrow="Professional Track Record"
+          title="Background & Credentials"
           description="Executive overview of professional corporate internships, verified SAP certifications, and academic foundations supporting technical engineering projects."
           className="mb-10"
         />

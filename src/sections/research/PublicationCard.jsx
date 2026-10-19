@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import DoiLink from "./DoiLink";
+import DoiLink from "../../components/showcase/DoiLink";
 
 export default function PublicationCard({ publication }) {
   return (

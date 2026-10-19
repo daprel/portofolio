@@ -1,9 +1,11 @@
+import { asset } from '../utils/asset';
+
 export const personalInfo = {
   name: "Muhamad Daffa Rial",
   nickname: "Daprel",
   title: "Industrial Engineer",
   tagline: "Bridging End-to-End Procurement, Supply Chain Analytics & Smart Systems",
-  location: "Jakarta, Indonesia (Open to field-based & project-site assignments)",
+  location: "Jakarta, Indonesia",
   email: "daffarial18@gmail.com",
   linkedinUrl: "https://www.linkedin.com/in/daffarial",
   scholarUrl: "https://scholar.google.com/citations?user=daffarial",
@@ -11,6 +13,7 @@ export const personalInfo = {
   education: {
     degree: "Bachelor of Engineering (B.Eng.) in Industrial Engineering",
     institution: "Telkom University, Bandung",
+    logo: asset('images/organizations/telkom-university-logo.png'),
     period: "Aug 2022 – Aug 2026",
     thesis: "RIKSA (Adaptive Waste Research, Information & Management Integration System) — WebGIS-based spatial decision support system for Bandung Horeka sector under Indonesia Extended Producer Responsibility (EPR) Policy."
   }

@@ -17,9 +17,11 @@ export const internships = [
     deliverables: ["Multi-Scenario Excel Solver Model", "Safety Stock Policy Matrix (50+ SKUs)", "End-to-End Supply Chain Evaluation"],
     tags: ["Excel Solver", "Safety Stock", "SKU Rationalization", "Inventory Analytics", "Supply Chain Planning"],
     images: [
-      asset('img/ptpn_intern/ptpn_intern_1.jpg'),
-      asset('img/ptpn_intern/ptpn_intern_2.jpg'),
-      asset('img/ptpn_intern/ptpn_intern_3.jpg')
+      asset('images/internships/ptpn/ptpn-internship-1.jpg'),
+      asset('images/internships/ptpn/ptpn-internship-2.jpg'),
+      asset('images/internships/ptpn/ptpn-internship-3.jpg'),
+      asset('images/internships/ptpn/ptpn-production-process-presentation.jpg'),
+      asset('images/internships/ptpn/ptpn-factory-team.jpg')
     ],
     videoUrl: null
   },

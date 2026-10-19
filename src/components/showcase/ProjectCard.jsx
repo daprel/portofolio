@@ -1,17 +1,15 @@
 import { motion } from "framer-motion";
-import { Maximize2, CheckCircle2, ArrowRight } from "lucide-react";
+import { Maximize2, ArrowRight } from "lucide-react";
 import Tag from "../ui/Tag";
 import ImagePlaceholder from "../ui/ImagePlaceholder";
 import ProjectLocation from "./ProjectLocation";
 import ActivityBadge from "./ActivityBadge";
 import CategoryBadge from "./CategoryBadge";
 
-const VISIBLE_DELIVERABLES = 2;
 const VISIBLE_TAGS = 3;
 
 export default function ProjectCard({ project, onOpen, onZoom }) {
   const coverImage = project.images[0];
-  const hiddenDeliverables = project.deliverables.length - VISIBLE_DELIVERABLES;
 
   return (
     <motion.article
@@ -71,24 +69,12 @@ export default function ProjectCard({ project, onOpen, onZoom }) {
             {project.summary}
           </p>
 
-          <div className="mb-4">
-            <div className="text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-2">
-              Key Deliverables
-            </div>
-            <ul className="space-y-1.5">
-              {project.deliverables.slice(0, VISIBLE_DELIVERABLES).map((item) => (
-                <li key={item} className="flex items-start gap-2 text-xs text-slate-700">
-                  <CheckCircle2 className="w-3.5 h-3.5 mt-px text-primary-light flex-shrink-0" />
-                  <span className="leading-snug">{item}</span>
-                </li>
-              ))}
-            </ul>
-            {hiddenDeliverables > 0 && (
-              <div className="mt-1.5 pl-5.5 text-[11px] font-medium text-slate-400">
-                +{hiddenDeliverables} more in case study
-              </div>
-            )}
-          </div>
+          {project.impact && (
+            <p className="mb-4 text-xs text-slate-700 leading-relaxed line-clamp-3">
+              <span className="font-bold text-primary">Outcome: </span>
+              {project.impact}
+            </p>
+          )}
         </div>
 
         {/* Footer: tags + action */}

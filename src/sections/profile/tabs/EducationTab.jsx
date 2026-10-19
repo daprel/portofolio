@@ -1,4 +1,4 @@
-import { GraduationCap, Award } from "lucide-react";
+import { Award } from "lucide-react";
 import { personalInfo } from "../../../data/profile";
 import { intellectualProperty } from "../../../data/credentials";
 
@@ -9,8 +9,8 @@ export default function EducationTab() {
     <div className="space-y-5">
       <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-2xs">
         <div className="flex items-start gap-4">
-          <div className="p-3 bg-slate-100 rounded-xl text-primary border border-slate-200 flex-shrink-0">
-            <GraduationCap className="w-7 h-7" />
+          <div className="w-16 h-16 p-2.5 bg-white rounded-xl border border-slate-200 flex items-center justify-center flex-shrink-0">
+            <img src={education.logo} alt={education.institution} className="w-full h-full object-contain" />
           </div>
           <div>
             <span className="text-[11px] font-bold text-primary-light uppercase tracking-wider">

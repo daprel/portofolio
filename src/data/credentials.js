@@ -1,33 +1,46 @@
+import { asset } from '../utils/asset';
+
+// Issuer logos shown on the certification cards.
+const logos = {
+  sap: asset('images/tools/sap.webp'),
+  telkomUniversity: asset('images/organizations/telkom-university-logo.png'),
+};
+
 export const certifications = [
   {
     name: "SAP SCM600: Business Processes in Sales Order Management",
     issuer: "Edugate Indonesia / SAP Certified",
     credentialId: "ID: 550192399",
-    category: "ERP / SAP"
+    category: "ERP / SAP",
+    logo: logos.sap
   },
   {
     name: "SAP SCM500: Business Processes in Procurement",
     issuer: "Edugate Indonesia / SAP Certified",
     credentialId: "ID: 550188744",
-    category: "ERP / SAP"
+    category: "ERP / SAP",
+    logo: logos.sap
   },
   {
     name: "SAP01: SAP Fundamentals",
     issuer: "Edugate Indonesia",
-    credentialId: "Verified Certificate",
-    category: "ERP / SAP"
+    credentialId: "ID: 1201223016",
+    category: "ERP / SAP",
+    logo: logos.sap
   },
   {
     name: "ECCT® (English Communicative Competence Test)",
     issuer: "Tel-U Language Center",
     credentialId: "Score: 4.0 / 4.0 (Proficient)",
-    category: "Language"
+    category: "Language",
+    logo: logos.telkomUniversity
   },
   {
     name: "EPrT® (English Proficiency Test)",
     issuer: "Tel-U Language Center",
     credentialId: "Score: 537 / 677 (CEFR B1+)",
-    category: "Language"
+    category: "Language",
+    logo: logos.telkomUniversity
   }
 ];
 
@@ -41,6 +54,7 @@ export const publications = [
     year: "2026",
     type: "International Conference",
     indexed: "Scopus / IEEE",
+    doi: "10.1109/ICOEINS69996.2026.11605823",
     featured: true,
     location: "Yogyakarta, Indonesia",
     summary: "Uncovered sustainability-oriented SME profiles by clustering 56 batik SMEs based on their knowledge management and green innovation practices.",
@@ -92,7 +106,7 @@ export const intellectualProperty = [
     title: "SMART BOTTLE SORTER Automatic Plastic Bottle Waste Sorting Machine",
     number: "EC00202641032 / 001230732",
     featured: true,
-    relatedProject: "Smart Bottle Sorter & Computer Vision GIS Dashboard (1st Best Product Capstone Design 2026)",
+    relatedProject: "MASPINTAR (1st Best Product Capstone Design 2026)",
     date: "May 13, 2026",
     type: "Registered Computer Program (DGIP Indonesia)"
   },
@@ -100,7 +114,7 @@ export const intellectualProperty = [
     title: "MASPINTAR - Integrated Plastic Packaging Waste Management System",
     number: "EC00202641025 / 001230725",
     featured: true,
-    relatedProject: "Smart Bottle Sorter & Computer Vision GIS Dashboard (1st Best Product Capstone Design 2026)",
+    relatedProject: "Capstone Design 2026 (1st Best Product)",
     date: "May 13, 2026",
     type: "Registered Computer Program (DGIP Indonesia)"
   },

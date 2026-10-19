@@ -9,7 +9,7 @@ export default function ProfileCard() {
       <div className="flex-shrink-0">
         <div className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-4 border-white shadow-md p-0.5 bg-slate-100">
           <img
-            src={asset('img/foto_profile.jpeg')}
+            src={asset('images/profile/profile-photo.jpg')}
             alt={personalInfo.name}
             className="w-full h-full object-cover rounded-full"
           />

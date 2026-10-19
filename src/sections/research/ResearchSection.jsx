@@ -8,7 +8,7 @@ import CategoryBadge from "../../components/showcase/CategoryBadge";
 import { publications, intellectualProperty } from "../../data/credentials";
 import PublicationCard from "./PublicationCard";
 import IprCard from "./IprCard";
-import DoiLink from "./DoiLink";
+import DoiLink from "../../components/showcase/DoiLink";
 
 const featuredPublications = publications.filter((pub) => pub.featured);
 const otherPublications = publications.filter((pub) => !pub.featured);

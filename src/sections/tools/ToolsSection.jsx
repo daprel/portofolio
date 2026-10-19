@@ -10,8 +10,8 @@ export default function ToolsSection() {
       <div className="container mx-auto max-w-6xl">
         <SectionHeader
           icon={Cpu}
-          eyebrow="Technical Stack & Software Proficiency"
-          title="Software & Technical Tool Ecosystem"
+          eyebrow="Technical Stack & Software"
+          title="Software & Tool Ecosystem"
           description="Specialized engineering software, enterprise ERP systems, industrial simulation tools, and analytical suites actively utilized for operational problem-solving."
         />
 

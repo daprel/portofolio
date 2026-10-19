@@ -6,6 +6,7 @@ import ImagePlaceholder from "../ui/ImagePlaceholder";
 import ProjectLocation from "./ProjectLocation";
 import ActivityBadge from "./ActivityBadge";
 import CategoryBadge from "./CategoryBadge";
+import DoiLink from "./DoiLink";
 
 // Case study modal. Renders nothing while `project` is null.
 export default function ProjectDetailModal({ project, onClose, onZoom }) {
@@ -74,7 +75,9 @@ export default function ProjectDetailModal({ project, onClose, onZoom }) {
                 </div>
               </div>
 
+              {(project.problem || project.solution) && (
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {project.problem && (
                 <div className="p-4 rounded-xl bg-slate-50 border border-slate-200">
                   <div className="text-xs font-bold uppercase tracking-wider text-amber-800 mb-1 flex items-center gap-1.5">
                     <AlertCircle className="w-4 h-4" />
@@ -84,7 +87,9 @@ export default function ProjectDetailModal({ project, onClose, onZoom }) {
                     {project.problem}
                   </p>
                 </div>
+                )}
 
+                {project.solution && (
                 <div className="p-4 rounded-xl bg-slate-50 border border-slate-200">
                   <div className="text-xs font-bold uppercase tracking-wider text-primary mb-1 flex items-center gap-1.5">
                     <CheckCircle2 className="w-4 h-4" />
@@ -94,8 +99,11 @@ export default function ProjectDetailModal({ project, onClose, onZoom }) {
                     {project.solution}
                   </p>
                 </div>
+                )}
               </div>
+              )}
 
+              {project.impact && (
               <div className="p-4 rounded-xl bg-slate-50 border border-slate-200">
                 <h4 className="text-xs font-bold uppercase tracking-wider text-slate-500 mb-1">
                   Outcome & Formal Recognition
@@ -103,8 +111,11 @@ export default function ProjectDetailModal({ project, onClose, onZoom }) {
                 <p className="text-slate-800 text-sm font-medium">
                   {project.impact}
                 </p>
+                <DoiLink doi={project.doi} className="mt-2" />
               </div>
+              )}
 
+              {project.deliverables.length > 0 && (
               <div>
                 <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">
                   Key Deliverables
@@ -118,6 +129,7 @@ export default function ProjectDetailModal({ project, onClose, onZoom }) {
                   ))}
                 </ul>
               </div>
+              )}
 
               <div>
                 <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">

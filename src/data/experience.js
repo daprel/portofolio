@@ -4,7 +4,7 @@ export const experiences = [
     id: "sinarmas",
     company: "Sinarmas Agribusiness & Food (SMART Tbk)",
     role: "Procurement Intern",
-    division: "Procurement - Asset Disposal Central CBS",
+    division: "Procurement - Asset Disposal CBS",
     location: "Jakarta, Indonesia",
     period: "Sep 2026 – Present",
     badge: "Corporate P2P",

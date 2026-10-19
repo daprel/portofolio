@@ -70,7 +70,7 @@ export default function HeroSection() {
             {/* Negative bottom margin tucks the portrait behind the overlapping card */}
             <div className="relative max-w-[290px] sm:max-w-[370px] md:max-w-[420px] w-full flex items-end justify-center mb-[-12px] sm:mb-[-20px] md:mb-[-26px]">
               <img
-                src={asset('img/foto_formal_daffa.png')}
+                src={asset('images/profile/formal-portrait.png')}
                 alt="Muhamad Daffa Rial"
                 className="w-full h-auto object-contain select-none pointer-events-none drop-shadow-[0_15px_25px_rgba(0,0,0,0.1)]"
               />

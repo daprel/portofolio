@@ -1,5 +1,6 @@
-import { motion } from "framer-motion";
-import { ZoomIn, CheckCircle2 } from "lucide-react";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ZoomIn, CheckCircle2, ChevronDown } from "lucide-react";
 import Tag from "../ui/Tag";
 import BrandLogo from "../ui/BrandLogo";
 import ProjectLocation from "./ProjectLocation";
@@ -67,28 +68,15 @@ export default function FeaturedShowcase({
             </p>
           )}
 
-          {(problem || solution) && (
-            <div className={`mb-4 p-3.5 rounded-xl bg-slate-50 border border-slate-200 text-xs gap-3 ${hasMedia ? "space-y-2" : "grid grid-cols-1 md:grid-cols-2"}`}>
-              {problem && (
-                <div>
-                  <span className="font-bold text-amber-800 uppercase tracking-wider block mb-0.5">Problem:</span>
-                  <p className="text-slate-700 leading-relaxed">{problem}</p>
-                </div>
-              )}
-              {solution && (
-                <div>
-                  <span className="font-bold text-primary uppercase tracking-wider block mb-0.5">Solution:</span>
-                  <p className="text-slate-700 leading-relaxed">{solution}</p>
-                </div>
-              )}
-            </div>
-          )}
-
           {impact && (
             <p className="mb-4 text-xs sm:text-sm font-medium text-slate-800 leading-relaxed">
               <span className="font-bold text-primary">Outcome: </span>
               {impact}
             </p>
+          )}
+
+          {(problem || solution) && (
+            <ProblemSolution problem={problem} solution={solution} sideBySide={!hasMedia} />
           )}
 
           {deliverables.length > 0 && (
@@ -122,8 +110,61 @@ export default function FeaturedShowcase({
   );
 }
 
+// Problem & solution are collapsed by default so the showcase leads with summary and outcome.
+function ProblemSolution({ problem, solution, sideBySide }) {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <div className="mb-4">
+      <button
+        onClick={() => setIsOpen((open) => !open)}
+        className="inline-flex items-center gap-1.5 text-xs font-bold text-primary hover:text-primary-dark cursor-pointer"
+        aria-expanded={isOpen}
+      >
+        <span>{isOpen ? "Hide Problem & Solution" : "Show Problem & Solution"}</span>
+        <ChevronDown className={`w-3.5 h-3.5 transition-transform ${isOpen ? "rotate-180" : ""}`} />
+      </button>
+
+      <AnimatePresence initial={false}>
+        {isOpen && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.25 }}
+            className="overflow-hidden"
+          >
+            <div className={`mt-2.5 p-3.5 rounded-xl bg-slate-50 border border-slate-200 text-xs gap-3 ${sideBySide ? "grid grid-cols-1 md:grid-cols-2" : "space-y-2"}`}>
+              {problem && (
+                <div>
+                  <span className="font-bold text-amber-800 uppercase tracking-wider block mb-0.5">Problem:</span>
+                  <p className="text-slate-700 leading-relaxed">{problem}</p>
+                </div>
+              )}
+              {solution && (
+                <div>
+                  <span className="font-bold text-primary uppercase tracking-wider block mb-0.5">Solution:</span>
+                  <p className="text-slate-700 leading-relaxed">{solution}</p>
+                </div>
+              )}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+}
+
+// Thumbnails shown before the "+N" tile; 6 fills a 3×2 grid.
+const MAX_THUMBNAILS = 6;
+
 function MediaGallery({ images, title, onZoom }) {
+  const [showAll, setShowAll] = useState(false);
   const [cover] = images;
+
+  const isCollapsed = !showAll && images.length > MAX_THUMBNAILS;
+  const thumbnails = isCollapsed ? images.slice(0, MAX_THUMBNAILS) : images;
+  const hiddenCount = images.length - MAX_THUMBNAILS + 1; // the last visible tile turns into "+N"
 
   return (
     <div className="lg:col-span-7 flex flex-col gap-3">
@@ -145,23 +186,42 @@ function MediaGallery({ images, title, onZoom }) {
 
       {images.length > 1 && (
         <div className="grid grid-cols-3 gap-2">
-          {images.map((img) => (
-            <div
-              key={img}
-              onClick={() => onZoom(img)}
-              className="rounded-lg overflow-hidden border border-slate-200 h-20 bg-slate-900 cursor-pointer relative group"
-            >
-              <img
-                src={img}
-                alt="Thumbnail"
-                className="w-full h-full object-cover group-hover:scale-105 transition duration-300"
-              />
-              <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
-                <ZoomIn className="w-3.5 h-3.5 text-white" />
+          {thumbnails.map((img, index) => {
+            const isMoreTile = isCollapsed && index === MAX_THUMBNAILS - 1;
+            return (
+              <div
+                key={img}
+                onClick={() => (isMoreTile ? setShowAll(true) : onZoom(img))}
+                className="rounded-lg overflow-hidden border border-slate-200 h-20 bg-slate-900 cursor-pointer relative group"
+                title={isMoreTile ? `Show ${hiddenCount} more photos` : undefined}
+              >
+                <img
+                  src={img}
+                  alt="Thumbnail"
+                  className="w-full h-full object-cover group-hover:scale-105 transition duration-300"
+                />
+                {isMoreTile ? (
+                  <div className="absolute inset-0 bg-black/60 group-hover:bg-black/70 transition flex items-center justify-center text-white text-lg font-extrabold">
+                    +{hiddenCount}
+                  </div>
+                ) : (
+                  <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                    <ZoomIn className="w-3.5 h-3.5 text-white" />
+                  </div>
+                )}
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
+      )}
+
+      {showAll && images.length > MAX_THUMBNAILS && (
+        <button
+          onClick={() => setShowAll(false)}
+          className="self-start text-xs font-bold text-primary hover:text-primary-dark cursor-pointer"
+        >
+          Show fewer photos
+        </button>
       )}
     </div>
   );

@@ -8,8 +8,9 @@ import ProjectCard from "./ProjectCard";
 import ProjectDetailModal from "./ProjectDetailModal";
 import ActivityBadge from "./ActivityBadge";
 import CategoryBadge from "./CategoryBadge";
+import DoiLink from "./DoiLink";
 
-// Section for project-shaped items (projects, internships): featured items as large
+// Section for project-shaped items (projects, internships, community service): featured items as large
 // showcases, the rest as cards that open a case-study modal.
 export default function CaseStudySection({ id, header, items, moreLabel }) {
   const [selectedItem, setSelectedItem] = useState(null);
@@ -44,6 +45,7 @@ export default function CaseStudySection({ id, header, items, moreLabel }) {
               impact={item.impact}
               deliverables={item.deliverables}
               tags={item.tags}
+              footer={<DoiLink doi={item.doi} className="mb-4" />}
             />
           ))}
         </div>

@@ -1,8 +1,20 @@
 # Private / Personal Documents
 
-Folder ini khusus untuk menyimpan berkas pribadi seperti:
-- CV / Resume (`.pdf`, `.docx`, dll.)
-- Portofolio internal / dokumen pribadi
-- Data identitas / sertifikat pribadi
+Semua isi folder ini (selain `.gitkeep` dan `README.md`) **diabaikan Git** melalui [.gitignore](../.gitignore), jadi tidak akan ter-push ke GitHub.
 
-Semua file yang dimasukkan ke dalam folder ini (selain `.gitkeep` dan `README.md` ini) **sudah otomatis diabaikan oleh Git** melalui [.gitignore](../.gitignore) sehingga aman dan tidak akan ter-push ke GitHub / remote repository.
+Folder ini adalah **arsip sumber asli** (foto resolusi penuh, PDF, sertifikat, CV). File yang ditampilkan di website adalah *salinan* yang sudah dikompres dan dibersihkan metadata-nya (termasuk lokasi GPS) di `public/images/`.
+
+## Struktur
+
+```
+cv/                  CV
+projects/            <nama-project>/
+competitions/        <nama-lomba-tahun>/
+internships/         <tempat-magang>/
+community-service/   <nama-kegiatan>/
+```
+
+## Aturan
+
+- Nama file & folder: kebab-case (huruf kecil, tanda hubung, tanpa spasi), diawali nama kegiatan, mis. `riksa-thesis/riksa-team-photo.jpg`.
+- Dokumen yang memuat data pribadi (NIM, NIK, nomor HP, sertifikat) **jangan** disalin ke `public/`.
