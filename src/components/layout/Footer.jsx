@@ -12,7 +12,7 @@ const connectLinks = [
 
 function FooterHeading({ children }) {
   return (
-    <h3 className="text-[11px] font-bold uppercase tracking-[0.14em] text-brand-lime mb-4">
+    <h3 className="text-[11px] font-bold uppercase tracking-[0.14em] text-accent-soft mb-4">
       {children}
     </h3>
   );
@@ -27,7 +27,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="mt-auto bg-ink text-white/70">
+    <footer className="mt-auto bg-primary-dark text-white/70">
       <div className="container mx-auto max-w-6xl px-6 pt-14 pb-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-10">
         {/* Brand */}
         <div className="sm:col-span-2 lg:col-span-5">
@@ -36,7 +36,7 @@ export default function Footer() {
             {personalInfo.tagline}.
           </p>
           <div className="mt-4 inline-flex items-center gap-2 text-xs text-white/50">
-            <MapPin className="w-3.5 h-3.5 text-brand-lime" />
+            <MapPin className="w-3.5 h-3.5 text-accent-soft" />
             <span>{personalInfo.location}</span>
           </div>
         </div>
@@ -71,7 +71,7 @@ export default function Footer() {
                   rel="noreferrer"
                   className="inline-flex items-center gap-2.5 hover:text-white transition-colors"
                 >
-                  <Icon className="w-4 h-4 text-brand-lime" />
+                  <Icon className="w-4 h-4 text-accent-soft" />
                   <span>{label}</span>
                 </a>
               </li>

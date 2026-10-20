@@ -21,7 +21,8 @@ export const internships = [
       asset('images/internships/ptpn/ptpn-internship-2.jpg'),
       asset('images/internships/ptpn/ptpn-internship-3.jpg'),
       asset('images/internships/ptpn/ptpn-production-process-presentation.jpg'),
-      asset('images/internships/ptpn/ptpn-factory-team.jpg')
+      asset('images/internships/ptpn/ptpn-factory-team.jpg'),
+      asset('images/internships/ptpn/ptpn-warehouse-visit.jpg')
     ],
     videoUrl: null
   },

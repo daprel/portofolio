@@ -17,4 +17,5 @@ community-service/   <nama-kegiatan>/
 ## Aturan
 
 - Nama file & folder: kebab-case (huruf kecil, tanda hubung, tanpa spasi), diawali nama kegiatan, mis. `riksa-thesis/riksa-team-photo.jpg`.
+- Tambahkan `deskripsi.md` di folder kegiatan (apa, kapan, peran, hasil) agar isi kartu di website bisa ditulis akurat.
 - Dokumen yang memuat data pribadi (NIM, NIK, nomor HP, sertifikat) **jangan** disalin ke `public/`.

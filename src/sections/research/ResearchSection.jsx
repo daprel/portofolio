@@ -49,6 +49,7 @@ export default function ResearchSection() {
               impact={pub.impact}
               deliverables={pub.deliverables}
               tags={pub.tags}
+              collapseOutcome
               footer={<DoiLink doi={pub.doi} className="mb-4" />}
             />
           ))}
@@ -78,7 +79,7 @@ export default function ResearchSection() {
               footer={
                 ipr.relatedProject && (
                   <p className="text-xs text-slate-600 leading-relaxed">
-                    <span className="font-bold text-primary">Developed in: </span>
+                    <span className="font-bold text-accent">Developed in: </span>
                     {ipr.relatedProject}
                   </p>
                 )

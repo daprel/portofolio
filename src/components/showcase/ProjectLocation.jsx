@@ -6,7 +6,7 @@ export default function ProjectLocation({ location, className = "" }) {
 
   return (
     <div className={`flex items-center gap-1.5 text-xs font-medium text-slate-500 ${className}`}>
-      <MapPin className="w-3.5 h-3.5 text-primary-light flex-shrink-0" />
+      <MapPin className="w-3.5 h-3.5 text-accent-light flex-shrink-0" />
       <span>{location}</span>
     </div>
   );

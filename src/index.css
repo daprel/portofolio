@@ -1,13 +1,15 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #344e41;
-  --color-primary-light: #588157;
-  --color-primary-dark: #283618;
-  --color-sand: #d4a373;
-  --color-sand-dark: #8a5a2c;
-  --color-ink: #17231b;       /* footer background */
-  --color-brand-olive: #5f7046; /* Daprel logo icon */
+  /* Primary (navy) — buttons, active states, key headings */
+  --color-primary: #1e3a5f;
+  --color-primary-light: #2f5d8f;
+  --color-primary-dark: #13263f;
+  /* Accent (sage-emerald green) — used sparingly: icons, bullets, highlights */
+  --color-accent: #3f7d58;
+  --color-accent-light: #5f9b76;
+  --color-accent-dark: #2d5c40;
+  --color-accent-soft: #9fd1b0; /* green accent for text on dark backgrounds */
   --color-brand-lime: #8db52a;  /* Daprel logo accent */
   --font-sans: "Inter", "Plus Jakarta Sans", sans-serif;
   --font-display: "Plus Jakarta Sans", "Inter", sans-serif;

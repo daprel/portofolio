@@ -45,7 +45,7 @@ export default function ProjectCard({ project, onOpen, onZoom }) {
 
         <div className="absolute bottom-3 left-3 right-3">
           <span className="inline-flex items-center gap-1.5 rounded-full bg-white/95 backdrop-blur-sm text-slate-800 text-[11px] font-semibold px-3 py-1 shadow-2xs truncate max-w-full">
-            <span className="w-1.5 h-1.5 rounded-full bg-brand-lime flex-shrink-0"></span>
+            <span className="w-1.5 h-1.5 rounded-full bg-accent flex-shrink-0"></span>
             {project.badge}
           </span>
         </div>
@@ -71,7 +71,7 @@ export default function ProjectCard({ project, onOpen, onZoom }) {
 
           {project.impact && (
             <p className="mb-4 text-xs text-slate-700 leading-relaxed line-clamp-3">
-              <span className="font-bold text-primary">Outcome: </span>
+              <span className="font-bold text-accent">Outcome: </span>
               {project.impact}
             </p>
           )}

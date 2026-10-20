@@ -8,6 +8,7 @@ import ProjectLocation from "./ProjectLocation";
 // Large highlight layout used at the top of every showcase section.
 // With `images` it shows a gallery beside the details; without, it becomes a full-width text card.
 // Every content prop is optional, so projects, papers and IPR filings can all use it.
+// Problem & solution are always collapsed; `collapseOutcome` also tucks outcome & deliverables into that panel.
 export default function FeaturedShowcase({
   images = [],
   onZoom,
@@ -22,8 +23,36 @@ export default function FeaturedShowcase({
   deliverables = [],
   tags = [],
   footer,
+  collapseOutcome = false,
 }) {
   const hasMedia = images.length > 0;
+  const hasProblemSolution = Boolean(problem || solution);
+
+  const outcome = impact && (
+    <p className="mb-4 text-xs sm:text-sm font-medium text-slate-800 leading-relaxed">
+      <span className="font-bold text-accent">Outcome: </span>
+      {impact}
+    </p>
+  );
+
+  const deliverableList = deliverables.length > 0 && (
+    <div className="mb-4">
+      <span className="text-[10px] font-bold uppercase tracking-wider text-slate-500 block mb-1.5">
+        Deliverables:
+      </span>
+      <ul className="space-y-1 text-xs text-slate-700">
+        {deliverables.map((item) => (
+          <li key={item} className="flex items-center gap-2">
+            <CheckCircle2 className="w-3.5 h-3.5 text-accent flex-shrink-0" />
+            <span>{item}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+
+  const collapsedLabel = collapseOutcome ? "Problem, Solution & Outcome" : "Problem & Solution";
+  const showDetailsPanel = hasProblemSolution || (collapseOutcome && (outcome || deliverableList));
 
   return (
     <motion.article
@@ -57,7 +86,7 @@ export default function FeaturedShowcase({
 
           {badge && (
             <div className="inline-flex items-center gap-1.5 mb-3 text-xs font-semibold text-slate-600 bg-slate-50 px-3 py-1 rounded-full border border-slate-200">
-              <span className="w-1.5 h-1.5 rounded-full bg-brand-lime flex-shrink-0"></span>
+              <span className="w-1.5 h-1.5 rounded-full bg-accent flex-shrink-0"></span>
               <span>{badge}</span>
             </div>
           )}
@@ -68,32 +97,23 @@ export default function FeaturedShowcase({
             </p>
           )}
 
-          {impact && (
-            <p className="mb-4 text-xs sm:text-sm font-medium text-slate-800 leading-relaxed">
-              <span className="font-bold text-primary">Outcome: </span>
-              {impact}
-            </p>
+          {!collapseOutcome && outcome}
+
+          {showDetailsPanel && (
+            <CollapsibleDetails label={collapsedLabel}>
+              {hasProblemSolution && (
+                <ProblemSolution problem={problem} solution={solution} sideBySide={!hasMedia} />
+              )}
+              {collapseOutcome && (
+                <div className="mt-3.5">
+                  {outcome}
+                  {deliverableList}
+                </div>
+              )}
+            </CollapsibleDetails>
           )}
 
-          {(problem || solution) && (
-            <ProblemSolution problem={problem} solution={solution} sideBySide={!hasMedia} />
-          )}
-
-          {deliverables.length > 0 && (
-            <div className="mb-4">
-              <span className="text-[10px] font-bold uppercase tracking-wider text-slate-500 block mb-1.5">
-                Deliverables:
-              </span>
-              <ul className="space-y-1 text-xs text-slate-700">
-                {deliverables.map((item) => (
-                  <li key={item} className="flex items-center gap-2">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-primary-light flex-shrink-0" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
+          {!collapseOutcome && deliverableList}
 
           {footer}
         </div>
@@ -110,8 +130,8 @@ export default function FeaturedShowcase({
   );
 }
 
-// Problem & solution are collapsed by default so the showcase leads with summary and outcome.
-function ProblemSolution({ problem, solution, sideBySide }) {
+// Toggle that reveals extra case-study detail; collapsed by default so the showcase leads with the summary.
+function CollapsibleDetails({ label, children }) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -121,7 +141,7 @@ function ProblemSolution({ problem, solution, sideBySide }) {
         className="inline-flex items-center gap-1.5 text-xs font-bold text-primary hover:text-primary-dark cursor-pointer"
         aria-expanded={isOpen}
       >
-        <span>{isOpen ? "Hide Problem & Solution" : "Show Problem & Solution"}</span>
+        <span>{isOpen ? `Hide ${label}` : `Show ${label}`}</span>
         <ChevronDown className={`w-3.5 h-3.5 transition-transform ${isOpen ? "rotate-180" : ""}`} />
       </button>
 
@@ -134,23 +154,29 @@ function ProblemSolution({ problem, solution, sideBySide }) {
             transition={{ duration: 0.25 }}
             className="overflow-hidden"
           >
-            <div className={`mt-2.5 p-3.5 rounded-xl bg-slate-50 border border-slate-200 text-xs gap-3 ${sideBySide ? "grid grid-cols-1 md:grid-cols-2" : "space-y-2"}`}>
-              {problem && (
-                <div>
-                  <span className="font-bold text-amber-800 uppercase tracking-wider block mb-0.5">Problem:</span>
-                  <p className="text-slate-700 leading-relaxed">{problem}</p>
-                </div>
-              )}
-              {solution && (
-                <div>
-                  <span className="font-bold text-primary uppercase tracking-wider block mb-0.5">Solution:</span>
-                  <p className="text-slate-700 leading-relaxed">{solution}</p>
-                </div>
-              )}
-            </div>
+            {children}
           </motion.div>
         )}
       </AnimatePresence>
+    </div>
+  );
+}
+
+function ProblemSolution({ problem, solution, sideBySide }) {
+  return (
+    <div className={`mt-2.5 p-3.5 rounded-xl bg-slate-50 border border-slate-200 text-xs gap-3 ${sideBySide ? "grid grid-cols-1 md:grid-cols-2" : "space-y-2"}`}>
+      {problem && (
+        <div>
+          <span className="font-bold text-accent uppercase tracking-wider block mb-0.5">Problem:</span>
+          <p className="text-slate-700 leading-relaxed">{problem}</p>
+        </div>
+      )}
+      {solution && (
+        <div>
+          <span className="font-bold text-primary uppercase tracking-wider block mb-0.5">Solution:</span>
+          <p className="text-slate-700 leading-relaxed">{solution}</p>
+        </div>
+      )}
     </div>
   );
 }

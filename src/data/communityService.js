@@ -41,7 +41,10 @@ export const communityService = [
       asset('images/community-service/digital-marketing-arafah/digital-marketing-arafah-team-visit.jpg'),
       asset('images/community-service/digital-marketing-arafah/digital-marketing-arafah-content-training.jpg'),
       asset('images/community-service/digital-marketing-arafah/digital-marketing-arafah-discussion.jpg'),
-      asset('images/community-service/digital-marketing-arafah/digital-marketing-arafah-instagram-content.jpg')
+      asset('images/community-service/digital-marketing-arafah/digital-marketing-arafah-instagram-content.jpg'),
+      asset('images/community-service/digital-marketing-arafah/digital-marketing-arafah-content-sharing.png'),
+      asset('images/community-service/digital-marketing-arafah/digital-marketing-arafah-content-nationwide-shipping.png'),
+      asset('images/community-service/digital-marketing-arafah/digital-marketing-arafah-content-packaging-sizes.png')
     ]
   },
   {

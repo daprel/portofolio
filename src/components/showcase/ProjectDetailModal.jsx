@@ -79,7 +79,7 @@ export default function ProjectDetailModal({ project, onClose, onZoom }) {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {project.problem && (
                 <div className="p-4 rounded-xl bg-slate-50 border border-slate-200">
-                  <div className="text-xs font-bold uppercase tracking-wider text-amber-800 mb-1 flex items-center gap-1.5">
+                  <div className="text-xs font-bold uppercase tracking-wider text-accent mb-1 flex items-center gap-1.5">
                     <AlertCircle className="w-4 h-4" />
                     <span>Challenge & Problem</span>
                   </div>
@@ -123,7 +123,7 @@ export default function ProjectDetailModal({ project, onClose, onZoom }) {
                 <ul className="space-y-1.5">
                   {project.deliverables.map((item) => (
                     <li key={item} className="flex items-center gap-2 text-sm text-slate-700">
-                      <CheckCircle2 className="w-4 h-4 text-primary-light flex-shrink-0" />
+                      <CheckCircle2 className="w-4 h-4 text-accent flex-shrink-0" />
                       <span>{item}</span>
                     </li>
                   ))}

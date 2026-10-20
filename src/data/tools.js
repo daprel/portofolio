@@ -5,7 +5,7 @@ export const coreTools = [
     name: "SAP ERP",
     category: "Enterprise Resource Planning",
     logoSrc: asset('images/tools/sap.webp'),
-    desc: "Certified in SAP SCM500 (Procurement/MM) and SCM600 (Sales Order/SD). Hands-on experience extracting ticket data and managing asset disposal workflows.",
+    desc: "Certified in SAP SCM500 (Procurement/MM) and SCM600 (Sales Order/SD). Hands-on experience end-to-end procurement and sales distribution workflows.",
     tag: "ERP"
   },
   {

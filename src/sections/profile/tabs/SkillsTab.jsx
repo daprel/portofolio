@@ -9,7 +9,7 @@ export default function SkillsTab() {
           key={cat.category}
           className="bg-white p-5 rounded-2xl border border-slate-200 shadow-2xs"
         >
-          <h4 className="text-sm font-bold text-primary mb-3 pb-2 border-b border-slate-100">
+          <h4 className="text-sm font-bold text-slate-900 mb-3 pb-2 border-b border-slate-100">
             {cat.category}
           </h4>
           <ul className="space-y-2">
@@ -18,7 +18,7 @@ export default function SkillsTab() {
                 key={item}
                 className="flex items-center gap-2 text-xs text-slate-700"
               >
-                <ChevronRight className="w-3.5 h-3.5 text-primary-light flex-shrink-0" />
+                <ChevronRight className="w-3.5 h-3.5 text-accent flex-shrink-0" />
                 <span>{item}</span>
               </li>
             ))}

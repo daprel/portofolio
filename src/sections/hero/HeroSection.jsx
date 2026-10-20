@@ -4,17 +4,19 @@ import SectionLink from '../../components/ui/SectionLink';
 import BrandLogo from '../../components/ui/BrandLogo';
 import { asset } from '../../utils/asset';
 import KeyStats from './KeyStats';
+import PortraitBackdrop from './PortraitBackdrop';
 
 const NAME_LINES = [
-  { text: 'Muhamad', color: 'text-primary' },
+  { text: 'Muhamad', color: 'text-slate-900' },
   { text: 'Daffa', color: 'text-primary-light my-1 sm:my-2' },
-  { text: 'Rial', color: 'text-primary' },
+  { text: 'Rial', color: 'text-slate-900' },
 ];
 
 const CREDIBILITY_LABELS = [
-  '🎓 Telkom University (GPA 3.89)',
-  '📜 SAP Certified (SCM500 & SCM600)',
-  '🏢 Sinarmas Agribusiness and Food Intern',
+  'Telkom University Graduate (GPA 3.89)',
+  'SAP Certified (SCM500 & SCM600)',
+  'Procurement Intern at SMART Tbk',
+  'Experienced in Inventory Analysis',
 ];
 
 export default function HeroSection() {
@@ -41,7 +43,7 @@ export default function HeroSection() {
             className="md:col-span-7 flex flex-col justify-center text-left z-10 pb-4 md:pb-12"
           >
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-100 border border-slate-200 text-slate-700 text-xs font-bold uppercase tracking-wider mb-5 w-max max-w-full">
-              <span>Industrial Engineering • Supply Chain Enthusiast</span>
+              <span>Industrial Engineer • Supply Chain Enthusiast</span>
             </div>
 
             <h1 className="font-display font-black tracking-tight leading-[0.93] text-left select-none">
@@ -69,10 +71,11 @@ export default function HeroSection() {
           >
             {/* Negative bottom margin tucks the portrait behind the overlapping card */}
             <div className="relative max-w-[290px] sm:max-w-[370px] md:max-w-[420px] w-full flex items-end justify-center mb-[-12px] sm:mb-[-20px] md:mb-[-26px]">
+              <PortraitBackdrop />
               <img
                 src={asset('images/profile/formal-portrait.png')}
                 alt="Muhamad Daffa Rial"
-                className="w-full h-auto object-contain select-none pointer-events-none drop-shadow-[0_15px_25px_rgba(0,0,0,0.1)]"
+                className="relative z-10 w-full h-auto object-contain select-none pointer-events-none drop-shadow-[0_15px_25px_rgba(0,0,0,0.1)]"
               />
             </div>
           </motion.div>
@@ -86,11 +89,11 @@ export default function HeroSection() {
           className="relative z-20 w-full bg-white rounded-3xl p-6 sm:p-9 border border-slate-200 shadow-xl shadow-slate-200/50"
         >
           <div className="flex gap-1.5 mb-3">
-            <span className="w-3.5 h-3.5 bg-sand rounded-[3px]"></span>
-            <span className="w-3.5 h-3.5 bg-sand rounded-[3px]"></span>
+            <span className="w-3.5 h-3.5 bg-primary rounded-[3px]"></span>
+            <span className="w-3.5 h-3.5 bg-accent rounded-[3px]"></span>
           </div>
 
-          <p className="text-xl sm:text-2xl md:text-3xl lg:text-[32px] font-extrabold text-primary leading-snug md:leading-tight tracking-tight max-w-4xl">
+          <p className="text-xl sm:text-2xl md:text-3xl lg:text-[32px] font-extrabold text-slate-900 leading-snug md:leading-tight tracking-tight max-w-4xl">
             Analyzing complex problems, optimizing supply chain and procurement workflows, and addressing systemic industrial challenges through data precision and technology.
           </p>
 
@@ -103,16 +106,16 @@ export default function HeroSection() {
               to="portfolio"
               className="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white px-6 py-3 rounded-xl font-bold text-xs sm:text-sm shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all group cursor-pointer"
             >
-              <Sparkles className="w-4 h-4 text-amber-300 group-hover:rotate-12 transition-transform" />
+              <Sparkles className="w-4 h-4 text-accent-soft group-hover:rotate-12 transition-transform" />
               <span>Explore Projects</span>
               <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </SectionLink>
 
             <SectionLink
               to="profile"
-              className="inline-flex items-center gap-2 bg-white hover:bg-slate-50 text-primary border border-slate-300 px-5 py-3 rounded-xl font-bold text-xs sm:text-sm shadow-2xs hover:shadow-xs transition-all cursor-pointer"
+              className="inline-flex items-center gap-2 bg-white hover:bg-slate-50 text-slate-800 border border-slate-300 px-5 py-3 rounded-xl font-bold text-xs sm:text-sm shadow-2xs hover:shadow-xs transition-all cursor-pointer"
             >
-              <Briefcase className="w-4 h-4 text-primary-light" />
+              <Briefcase className="w-4 h-4 text-accent" />
               <span>Career Track & CV</span>
             </SectionLink>
           </div>

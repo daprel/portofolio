@@ -21,6 +21,7 @@ export const projects = [
       asset('images/projects/riksa/riksa-thesis-presentation-group-2.jpg'),
       asset('images/projects/riksa/riksa-thesis-presentation-group.jpg'),
       asset('images/projects/riksa/riksa-webgis-heatmap-display.jpg'),
+      asset('images/projects/riksa/riksa-webgis-kde-heatmap-screenshot.jpg'),
       asset('images/projects/riksa/riksa-webgis-dashboard-demo.jpg'),
       asset('images/projects/riksa/riksa-stakeholder-discussion.jpg'),
       asset('images/projects/riksa/riksa-bank-sampah-interview.jpg'),
@@ -59,17 +60,17 @@ export const projects = [
   },
   {
     id: "isilogic-smart-bin",
-    title: "IoT Smart Trash Can with Real-Time Fill Telemetry",
+    title: "GreenVault: IoT Smart Trash Can with Real-Time Fill Telemetry",
     category: "IoT & Embedded AI",
     badge: "2nd Place Karsa Cipta ISILOGIC 2024",
     location: "Bandung, Indonesia",
     activity: "competition",
-    summary: "Engineered an IoT-connected trash bin monitoring real-time fill capacity by waste category to replace static campus waste collection schedules.",
+    summary: "GreenVault, an integrated campus trash bin developed with Quality Function Deployment (QFD) and an IoT monitoring system that tracks real-time fill capacity by waste category at Telkom University.",
     problem: "Inefficient static waste collection schedules on campus, with no real-time visibility of bin capacity per waste category.",
-    solution: "Led an IoT engineering team to deploy real-time ultrasonic telemetry hardware that monitors fill capacity by waste category.",
+    solution: "Led the Waste Warriors team in applying QFD (questionnaire weighting, Klein grid, and House of Quality) to prioritize two waste-type compartments, adequate capacity, modular design, and a monitoring feature; built ultrasonic sensors with an ESP32 sending fill data over Wi-Fi to a cloud dashboard that flags a bin as FULL at 80% capacity.",
     impact: "Won 2nd Place in Karsa Cipta (IoT Innovation) at the national ISILOGIC 2024 competition.",
-    deliverables: ["IoT Smart Bin Hardware Prototype", "Real-Time Fill Capacity Telemetry"],
-    tags: ["IoT Hardware", "Arduino", "Team Leadership"],
+    deliverables: ["GreenVault Smart Bin Prototype", "QFD Analysis & House of Quality", "Real-Time Fill Monitoring Dashboard"],
+    tags: ["IoT Hardware", "Arduino", "ESP32", "Quality Function Deployment", "Team Leadership"],
     images: [
       asset('images/projects/isilogic-2024/isilogic-2024.jpg'),
       asset('images/projects/isilogic-2024/isilogic-karsa-cipta-team.jpg'),
@@ -78,7 +79,16 @@ export const projects = [
       asset('images/projects/isilogic-2024/isilogic-karsa-cipta-sensor-module.jpg'),
       asset('images/projects/isilogic-2024/isilogic-karsa-cipta-sensor-test.jpg'),
       asset('images/projects/isilogic-2024/isilogic-karsa-cipta-site-survey-1.jpg'),
-      asset('images/projects/isilogic-2024/isilogic-karsa-cipta-site-survey-2.jpg')
+      asset('images/projects/isilogic-2024/isilogic-karsa-cipta-site-survey-2.jpg'),
+      asset('images/projects/isilogic-2024/isilogic-karsa-cipta-demo.jpg'),
+      asset('images/projects/isilogic-2024/isilogic-karsa-cipta-expo.jpg'),
+      asset('images/projects/isilogic-2024/isilogic-karsa-cipta-team-poster.jpg'),
+      asset('images/projects/isilogic-2024/isilogic-karsa-cipta-exploded-drawing.png'),
+      asset('images/projects/isilogic-2024/isilogic-karsa-cipta-slide-questionnaire-weighting.jpg'),
+      asset('images/projects/isilogic-2024/isilogic-karsa-cipta-slide-klein-grid.jpg'),
+      asset('images/projects/isilogic-2024/isilogic-karsa-cipta-slide-house-of-quality.jpg'),
+      asset('images/projects/isilogic-2024/isilogic-karsa-cipta-slide-monitoring-workflow.jpg'),
+      asset('images/projects/isilogic-2024/isilogic-karsa-cipta-slide-monitoring-dashboard.jpg')
     ],
     videoUrl: null
   },
@@ -96,7 +106,9 @@ export const projects = [
     deliverables: ["Sentiment Analysis Pipeline", "Published Research Paper (SINTA 3)"],
     tags: ["Text Mining", "Sentiment Analysis", "NLP", "Data Science"],
     images: [
+      asset('images/projects/isilogic-2024/isilogic-research-awarding.jpg'),
       asset('images/projects/isilogic-2024/isilogic-research-team-award.jpg'),
+      asset('images/projects/isilogic-2024/isilogic-research-awarding-group.jpg'),
       asset('images/projects/isilogic-2024/isilogic-2024.jpg')
     ],
     videoUrl: null
@@ -119,6 +131,98 @@ export const projects = [
       asset('images/projects/iscea-2026/iscea-slide-01-cover.jpg'),
       asset('images/projects/iscea-2026/iscea-slide-04-volume-shocks.png'),
       asset('images/projects/iscea-2026/iscea-certificate.jpg')
+    ],
+    videoUrl: null
+  },
+  {
+    id: "crip-blend",
+    title: "CRIP Blend: Blender with Integrated Weighing Scale",
+    category: "Product Design & Development",
+    badge: "Product Development Course & Practicum · Expo",
+    location: "Telkom University, Bandung",
+    activity: "courseAssignment",
+    summary: "Developed CRIP Blend, a 2-liter blender with a built-in weight module and timer so ingredients can be weighed directly in the blender, aimed at F&B businesses and households.",
+    problem: "Food preparation requires separate tools to weigh and blend ingredients, adding steps for F&B business owners and households.",
+    solution: "Ran a systematic product development process: voice-of-customer questionnaire, quality dimension definition, House of Quality, 3D CAD iterations, stress analysis (material and static), design for manufacture, and design for environment.",
+    impact: "Delivered the CRIP Blend product concept with CAD design and stress-analysis validation, presented at the course expo.",
+    deliverables: ["Voice of Customer & House of Quality", "3D CAD Model & Stress Analysis", "DFM & DFE Evaluation", "Product Poster & Tent Card"],
+    tags: ["Product Development", "House of Quality", "3D CAD", "Stress Analysis", "DFM / DFE"],
+    images: [
+      asset('images/projects/crip-blend/crip-blend-tent-card.png'),
+      asset('images/projects/crip-blend/crip-blend-3d-render.png'),
+      asset('images/projects/crip-blend/crip-blend-expo-team.jpg'),
+      asset('images/projects/crip-blend/crip-blend-final-presentation.jpg'),
+      asset('images/projects/crip-blend/crip-blend-product-poster.png'),
+      asset('images/projects/crip-blend/crip-blend-stress-analysis.png')
+    ],
+    videoUrl: null
+  },
+  {
+    id: "scm-aggregate-planning",
+    title: "Aggregate Production, Demand Forecasting, & Supply Chain Planning",
+    category: "Supply Chain & Operations Planning",
+    badge: "Supply Chain Management Course · Final Coursework",
+    location: "Telkom University, Bandung",
+    activity: "courseAssignment",
+    summary: "Developed an aggregate production plan for a case study, covering forecasting model selection and production, promotion, procurement, and transportation strategies.",
+    problem: "The case study required an integrated plan to meet forecast demand across production, promotion, procurement, and transportation decisions.",
+    solution: "Compared forecasting models (SMA, DMS, Winters, Holt's, and others), evaluated chase and level production strategies, applied MRP II, and optimized the plan with Excel Solver.",
+    impact: "Delivered an integrated aggregate plan built on the selected forecasting model, with production, promotion, procurement, and transportation strategies.",
+    deliverables: ["Demand Forecasting Model Comparison", "Aggregate Production Plan (Chase vs. Level)", "MRP II & Procurement Plan", "Promotion & Transportation Strategy"],
+    tags: ["Forecasting", "Aggregate Planning", "MRP II", "Chase & Level Strategy", "Excel Solver"],
+    // Documentation pending — add files to private/projects/scm-aggregate-planning-coursework/ (card shows "TBA" meanwhile).
+    images: [],
+    videoUrl: null
+  },
+  {
+    id: "production-planning-control",
+    title: "End-to-End Production Planning & Control",
+    category: "Production Planning & Control",
+    badge: "Production Planning & Control Course · Final Coursework",
+    location: "Telkom University, Bandung",
+    activity: "courseAssignment",
+    summary: "Performed an end-to-end production planning analysis from aggregate demand data, from aggregate planning and master scheduling through material requirements, capacity checks, and shop-floor scheduling.",
+    problem: "Aggregate demand had to be translated into feasible production, material, and capacity plans down to the shop-floor level.",
+    solution: "Compared level and chase strategies with a transportation model for aggregate planning, built the Master Production Schedule and Rough-Cut Capacity Planning, derived MRP I and MRP II, and scheduled operations with job shop scheduling and line balancing.",
+    impact: "Delivered an integrated production plan linking aggregate demand to material requirements, capacity, and shop-floor schedules.",
+    deliverables: ["Aggregate Plan (Level vs. Chase, Transportation Model)", "Master Production Schedule & RCCP", "MRP I & MRP II", "Job Shop Schedule & Line Balancing"],
+    tags: ["Aggregate Planning", "MPS & RCCP", "MRP I / MRP II", "Job Shop Scheduling", "Line Balancing"],
+    // Documentation pending — add files to private/projects/production-planning-control-coursework/ (card shows "TBA" meanwhile).
+    images: [],
+    videoUrl: null
+  },
+  {
+    id: "transportation-route-optimization",
+    title: "Least-Cost Transportation Route Planning",
+    category: "Operations Research & Logistics",
+    badge: "Operational Research Course · Final Coursework",
+    location: "Telkom University, Bandung",
+    activity: "courseAssignment",
+    summary: "Planned transportation routes to define the lowest-cost logistics strategy, considering vendor–facility–customer distances, truck capacity, and realistic case constraints.",
+    problem: "Each case required routing goods between vendors, facilities, and customers at the lowest cost while respecting truck capacity and realistic operating constraints.",
+    solution: "Modeled the distribution network with Dijkstra's algorithm for shortest paths and the Travelling Salesman Problem for visit sequencing, solved using POM-QM and Python.",
+    impact: "Produced a least-cost route plan and logistics strategy for each case.",
+    deliverables: ["Shortest-Path Network Model", "TSP Route Sequence", "Least-Cost Logistics Strategy"],
+    tags: ["Dijkstra's Algorithm", "Travelling Salesman Problem", "POM-QM", "Python", "Route Optimization"],
+    // Documentation pending — add files to private/projects/transportation-route-optimization-coursework/ (card shows "TBA" meanwhile).
+    images: [],
+    videoUrl: null
+  },
+  {
+    id: "coffee-machine-customer-segmentation",
+    title: "Customer Segmentation for a Coffee Machine Company",
+    category: "Data Analytics & Machine Learning",
+    badge: "Data Analytics Course · Final Coursework",
+    location: "Telkom University, Bandung",
+    activity: "courseAssignment",
+    summary: "Analyzed a coffee machine company's customer profile dataset to predict each customer's most likely product preference and segment the market into priority clusters.",
+    problem: "The company needed to know which product type each customer is most likely to prefer and which customer clusters to prioritize for marketing.",
+    solution: "Analyzed the customer profile dataset in Python, using a decision tree model to predict product preference and K-Means clustering to segment the market.",
+    impact: "Identified priority customer clusters as a data-driven basis for an effective marketing strategy.",
+    deliverables: ["Customer Profile Data Analysis", "Product Preference Decision Tree", "K-Means Market Segmentation"],
+    tags: ["Data Analysis", "Python", "K-Means Clustering", "Decision Tree", "Market Segmentation"],
+    images: [
+      asset('images/projects/coffee-machine-segmentation/coffee-machine-decision-tree.png')
     ],
     videoUrl: null
   }

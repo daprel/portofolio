@@ -7,7 +7,7 @@ export default function CollaborativeTools() {
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-5">
         <div className="max-w-sm">
           <div className="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-slate-500 mb-0.5">
-            <Users className="w-3.5 h-3.5 text-primary-light" />
+            <Users className="w-3.5 h-3.5 text-accent" />
             <span>Integrated Productivity</span>
           </div>
           <h4 className="text-base font-bold text-slate-900">

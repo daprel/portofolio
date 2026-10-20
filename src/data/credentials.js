@@ -53,7 +53,7 @@ export const publications = [
     conference: "2026 International Conference on Enterprise and Industrial System (ICOEINS)",
     year: "2026",
     type: "International Conference",
-    indexed: "Scopus / IEEE",
+    indexed: "IEEE Xplore",
     doi: "10.1109/ICOEINS69996.2026.11605823",
     featured: true,
     location: "Yogyakarta, Indonesia",
@@ -108,7 +108,7 @@ export const intellectualProperty = [
     featured: true,
     relatedProject: "MASPINTAR (1st Best Product Capstone Design 2026)",
     date: "May 13, 2026",
-    type: "Registered Computer Program (DGIP Indonesia)"
+    type: "Registered Computer Program"
   },
   {
     title: "MASPINTAR - Integrated Plastic Packaging Waste Management System",
@@ -116,13 +116,13 @@ export const intellectualProperty = [
     featured: true,
     relatedProject: "Capstone Design 2026 (1st Best Product)",
     date: "May 13, 2026",
-    type: "Registered Computer Program (DGIP Indonesia)"
+    type: "Registered Computer Program"
   },
   {
     title: "SME E-Business Adoption Readiness Self-Assessment System",
     number: "EC00202631245 / 001186169",
     featured: true,
     date: "April 7, 2026",
-    type: "Registered Computer Program (DGIP Indonesia)"
+    type: "Registered Computer Program"
   }
 ];

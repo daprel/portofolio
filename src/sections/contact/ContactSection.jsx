@@ -40,7 +40,7 @@ export default function ContactSection() {
           description="Open for career opportunities, strategic procurement operations, supply chain consulting, and research partnerships."
         >
           <div className="mt-3.5 inline-flex items-center gap-2 text-xs text-slate-600 bg-slate-50 px-3 py-1 rounded-full border border-slate-200">
-            <MapPin className="w-3.5 h-3.5 text-primary-light" />
+            <MapPin className="w-3.5 h-3.5 text-accent" />
             <span>{personalInfo.location}</span>
           </div>
         </SectionHeader>

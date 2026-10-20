@@ -41,7 +41,7 @@ export default function ExperienceTab() {
           <ul className="space-y-1.5 text-xs sm:text-sm text-slate-700">
             {exp.highlights.map((highlight) => (
               <li key={highlight} className="flex items-start gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-primary-light mt-1.5 flex-shrink-0"></span>
+                <span className="w-1.5 h-1.5 rounded-full bg-accent mt-1.5 flex-shrink-0"></span>
                 <span className="leading-relaxed">{highlight}</span>
               </li>
             ))}

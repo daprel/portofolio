@@ -8,7 +8,7 @@ export default function SectionHeader({ icon: Icon, eyebrow, title, description,
   return (
     <header className={`${className} text-center`}>
       <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-100 border border-slate-200 text-slate-700 text-xs font-bold uppercase tracking-wider mb-3">
-        {Icon && <Icon className="w-3.5 h-3.5 text-primary-light" />}
+        {Icon && <Icon className="w-3.5 h-3.5 text-accent" />}
         <span>{eyebrow}</span>
       </div>
 
@@ -16,7 +16,7 @@ export default function SectionHeader({ icon: Icon, eyebrow, title, description,
         initial={{ opacity: 0, y: 15 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="text-3xl sm:text-4xl font-extrabold tracking-tight text-primary"
+        className="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900"
       >
         {title}
       </Title>

@@ -13,7 +13,7 @@ export default function EducationTab() {
             <img src={education.logo} alt={education.institution} className="w-full h-full object-contain" />
           </div>
           <div>
-            <span className="text-[11px] font-bold text-primary-light uppercase tracking-wider">
+            <span className="text-[11px] font-bold text-accent uppercase tracking-wider">
               {education.period}
             </span>
             <h4 className="text-lg sm:text-xl font-bold text-slate-900 mt-0.5">
@@ -38,7 +38,7 @@ export default function EducationTab() {
 
       <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-2xs">
         <h4 className="text-base font-bold text-slate-900 mb-3.5 flex items-center gap-2">
-          <Award className="w-5 h-5 text-primary-light" />
+          <Award className="w-5 h-5 text-accent" />
           <span>Registered Patents & Intellectual Property Rights (DGIP Indonesia)</span>
         </h4>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
@@ -47,7 +47,7 @@ export default function EducationTab() {
               key={ipr.number}
               className="p-3.5 rounded-xl bg-slate-50 border border-slate-200 hover:border-slate-300 transition"
             >
-              <div className="text-[10px] font-bold uppercase text-primary-light mb-1">
+              <div className="text-[10px] font-bold uppercase text-accent mb-1">
                 {ipr.type}
               </div>
               <h5 className="text-xs font-bold text-slate-900 leading-snug mb-1.5">

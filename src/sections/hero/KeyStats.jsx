@@ -8,7 +8,7 @@ export default function KeyStats() {
           key={stat.label}
           className="bg-slate-50/70 p-3.5 rounded-2xl border border-slate-200/80 shadow-2xs hover:border-slate-300 transition-colors"
         >
-          <div className="text-xl sm:text-2xl font-black text-primary">
+          <div className="text-xl sm:text-2xl font-black text-accent">
             {stat.value}
           </div>
           <div className="text-xs sm:text-sm font-bold text-slate-800 mt-0.5">

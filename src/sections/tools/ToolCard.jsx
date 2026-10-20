@@ -28,7 +28,7 @@ export default function ToolCard({ tool, index }) {
           {tool.name}
         </h3>
 
-        <div className="text-[11px] font-semibold text-primary-light mb-2">
+        <div className="text-[11px] font-semibold text-accent mb-2">
           {tool.category}
         </div>
 

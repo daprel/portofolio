@@ -6,7 +6,7 @@ const SIZES = {
 
 export default function Tag({ children, size = 'sm' }) {
   return (
-    <span className={`inline-flex items-center rounded-full bg-primary/5 text-primary font-semibold border border-primary/15 ${SIZES[size]}`}>
+    <span className={`inline-flex items-center rounded-full bg-accent/5 text-accent font-semibold border border-accent/15 ${SIZES[size]}`}>
       {children}
     </span>
   );

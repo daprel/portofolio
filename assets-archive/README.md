@@ -6,7 +6,7 @@ Untuk memakai lagi sebuah file: pindahkan ke folder yang sesuai di `public/image
 
 ```
 gtx-laboratory/   kunjungan Lab GTX ke GMF
-misc/             foto lama dari versi web sebelumnya
+misc/             foto lama dari versi web sebelumnya (gudang & tea tasting)
 organizations/    logo PTPN
 research/         dokumentasi ICOEINS 2026 & halaman paper ICSMech 2026
 ```
